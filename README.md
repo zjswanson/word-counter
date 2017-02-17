@@ -22,15 +22,24 @@ Sample Output: 5 matches, html output string: "<p>The internet loves the <em>cat
 Testing method: Construct test to verify that the object contains the correct html output string such that Twig can render the phrase with emphasis"
 ```
 ```
-Behavior: User inputs search string and chooses the default phrase to search.  
-Sample Input: search: "brillig", "Jabberwocky"
-Sample Output: 2 matches, 2 instances of "brillig" emphasized in output text.
-Testing method: Construct test to verify that the object contains the default text and the associated match results.
+Behavior: User clicks a button to navigate to one of the default text pages.  App directs them to the page and displays the default text.  
+Sample Input: Click on Jabberwocky
+Sample Output: Navigate to Jabberwocky page and
+Testing method: Construct template to verify that html strings are correctly displayed.
+```
+```
+Behavior: User clicks custom search button.  App directs them to root directory.
+Sample Input: Click on Custom Search
+Sample Output: Navigate to root page
+Testing method: No unit testing required, verify rerouting through user interface.
+```
+```
+Behavior: User inputs search string on one of the default pages. App outputs the matches and highlights the matches in the appropriate default text.  
+Sample Input: search: "brillig" on Jabberwocky page
+Sample Output: 2 matches, 2 instances of "brillig" emphasized in text of Jabberwocky.
+Testing method: Construct tests to verify that count method correctly processes text strings from Default objects.
 ```
 
-
-
-add default text to search (lewis carol, maybe)
 
 
 
