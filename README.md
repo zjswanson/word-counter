@@ -11,7 +11,7 @@ _This is a simple application designed to demonstrate the use of unit testing in
 ## Application Behaviors
 ```
 Behavior: User inputs a search string and a phrase string to be searched.  App outputs the number of occurrences of the search string in the long string.
-Sample Input: search: "cat", "The internet is full of cats.  Cat videos, cat merchandise, cat apparel and catalogs of cat behavior."
+Sample Input: search: "cat", "The internet loves the cat.  Cat videos, cat merchandise, cat apparel and catalogs of cat behavior."
 Sample Output: 5 matches.
 Testing method: The phrase was chosen because the search string occurs many times, and because the search string is contained in another word in the phrase.  Verifying functionality will require testing that the method 1)returns a match for a single occurrence of the search string, 2)returns the correct number of matches for multiple occurrences, and 3) does not return a match for partial word matches.
 ```
