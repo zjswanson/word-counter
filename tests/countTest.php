@@ -29,6 +29,19 @@
         $this->assertEquals(5,$result);
         }
 
+        function test_Counter_emphasis()
+        {
+        // Arrange
+        $search_string = "cat";
+        $phrase_to_search = "The internet loves the cat.";
+        $test_case = new Counter($search_string,$phrase_to_search);
+
+        //Act
+        $result = $test_case->getResultPhrase();
+        //assert
+        $this->assertEquals("<p>The internet loves the <em>cat.</em></p>",$result);
+        }
+
 
     }
 
