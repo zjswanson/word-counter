@@ -1,0 +1,8 @@
+{% extends "home.html.twig" %}
+
+{% block display %}
+    <h2>Word Count Results</h2>
+    <h4>You searched for: {{ counter.getSearchString }}</h4>
+    <h4>We found {{ counter.getMatchCount }} matches: </h4>
+    {{ counter.getResultPhrase | raw }}
+{% endblock %}

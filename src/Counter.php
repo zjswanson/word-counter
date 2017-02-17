@@ -7,6 +7,7 @@
         private $search_string;
         private $phrase_to_search;
         private $match_count;
+        private $result_phrase;
 
         function getSearchString()
         {
@@ -35,6 +36,15 @@
             $this->match_count = $new_string;
         }
 
+        function getResultPhrase()
+        {
+            return $this->result_phrase;
+        }
+        function setResultPhrase($new_string)
+        {
+            $this->result_phrase = $new_string;
+        }
+
         function __construct($search_string,$phrase_to_search)
         {
             $this->search_string = $search_string;
@@ -47,14 +57,16 @@
             // set relationship so count is set into object property.
             $count = 0;
             // create array of words in the phrase
-            $search_array = explode(" ",strtolower(  str_ireplace(array(",",".","?",":",";","!","@","#","$","%","&","*","-"),"",$this->phrase_to_search)   ));
-            // count matching words, ignoring case and punctuation
-            foreach ($search_array as $word) {
-                if (strtolower($this->search_string) == $word)
+            $search_array = explode(" ",strtolower($this->phrase_to_search));
+            // count matching words, ignoring case
+            foreach ($search_array as &$word) {
+                if (strtolower($this->search_string) == strtolower(str_ireplace(array(",",".","?",":",";","!","@","#","$","%","&","*","-"),"",$word)) )
                 {
                     ++$count;
+                    $word = "<em>".$word."</em>";
                 }
             }
+            $this->result_phrase = "<p>".implode(" ", $search_array)."</p>";
             $this->match_count = $count;
         }
 

@@ -17,6 +17,17 @@ Testing method: The phrase was chosen because the search string occurs many time
 ```
 
 
+return plurals and possessives
+
+return partials
+
+add default text to search (lewis carol, maybe)
+
+display search text with matches highlighted
+
+
+
+
 
 ## Setup/Installation Requirements
 
