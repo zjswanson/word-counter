@@ -10,7 +10,7 @@
     </div>
     <div class='form-group hidden_form'>
         <label for='phrase'>Enter the phrase in which you would like the word counted</label>
-        <input type='text' name='phrase' value="{{ default.getJabberwocky }}">
+        <input type='text' name='phrase' value="{{ default.getGettysburg }}">
     </div>
     <button type='submit' class='btn btn-info'>Count words!</button>
 </form>
@@ -21,10 +21,10 @@
 <form method="get">
     <h4>Search other texts or head home for custom search</h4>
     <div class="form-group">
-        <button class='btn btn-info' type="submit" name="gettysburg" formaction="/gettysburg">The Gettysburg Address</button>
+        <button class='btn btn-info' type="submit" name="jabberwocky" formaction="/jabberwocky">Jabberwocky by Lewis Carol</button>
 
         <button class='btn btn-info' type="submit" name="stairway" formaction="/stairway">Stairway to Heaven by Led Zepplin</button>
-        
+
         <button class='btn btn-info' type="submit" name="home" formaction="/">Custom Search</button>
     </div>
 </form>
@@ -33,5 +33,5 @@
 
 {% block display %}
     <h2>The Text:</h2>
-    <p>{{ default.getJabberwocky | raw }}</p>
+    <p>{{ default.getGettysburg | raw }}</p>
 {% endblock %}

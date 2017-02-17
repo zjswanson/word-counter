@@ -60,7 +60,7 @@
             $search_array = explode(" ",$this->phrase_to_search);
             // count matching words, ignoring case
             foreach ($search_array as &$word) {
-                if (strtolower($this->search_string) == strtolower(str_ireplace(array(",",".","?",":",";","!","@","#","$","%","&","*","-"),"",$word)) )
+                if (strtolower($this->search_string) == strtolower(str_ireplace(array(",",".","?",":",";","!","@","#","$","%","&","*","-","<br>"),"",$word)) )
                 {
                     ++$count;
                     $word = "<em>".$word."</em>";

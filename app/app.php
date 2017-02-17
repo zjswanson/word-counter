@@ -4,9 +4,6 @@
     require_once __DIR__.'/../src/Counter.php';
     require_once __DIR__.'/../src/Defaults.php';
 
-    session_start();
-    $_SESSION['default']= new Defaults();
-
     $app = new Silex\Application();
     $app['debug']=true;
     $app->register(new Silex\Provider\TwigServiceProvider(), array(
@@ -18,15 +15,15 @@
     });
 
     $app->get("/jabberwocky", function() use ($app) {
-        return $app['twig']->render("jabberwocky.html.twig", array("default" => $_SESSION['default']));
+        return $app['twig']->render("jabberwocky.html.twig", array("default" => new Defaults()));
     });
 
     $app->get("/gettysburg", function() use ($app) {
-        return $app['twig']->render("gettysburg.html.twig",array("default" => $_SESSION['default']));
+        return $app['twig']->render("gettysburg.html.twig",array("default" => new Defaults()));
     });
 
     $app->get("/stairway", function() use ($app) {
-        return $app['twig']->render("stairway.html.twig",array("default" => $_SESSION['default']));
+        return $app['twig']->render("stairway.html.twig",array("default" => new Defaults()));
     });
 
     $app->post("/display", function() use ($app) {
