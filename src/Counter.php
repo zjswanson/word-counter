@@ -56,9 +56,9 @@
         {
             // set relationship so count is set into object property.
             $count = 0;
-            // create array of words in the phrase
+            // create array of words in the phrase, adjusting for line breaks in default text
             $search_array = explode(" ",str_replace("<br>","<br> ",$this->phrase_to_search));
-            // count matching words, ignoring case
+            // count matching words, ignoring case and line breaks
             foreach ($search_array as &$word) {
                 if (strtolower($this->search_string) == strtolower(str_ireplace(array(",",".","?",":",";","!","@","#","$","%","&","*","-","<br>"),"",$word)) )
                 {
@@ -66,6 +66,7 @@
                     $word = "<em>".$word."</em>";
                 }
             }
+            // returns count and html to display
             $this->result_phrase = "<p>".implode(" ", $search_array)."</p>";
             $this->match_count = $count;
         }

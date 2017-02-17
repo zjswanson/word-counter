@@ -1,5 +1,25 @@
 {% extends "home.html.twig" %}
 
+{% block inputform %}
+{% endblock %}
+
+
+{% block navbuttons %}
+<form method="get">
+    <h4>Count again! Select a text to search:</h4>
+    <div class="btn-group-vertical">
+        <button class='btn btn-info' type="submit" name="jabberwocky" formaction="/jabberwocky">Jabberwocky by Lewis Carol</button>
+
+        <button class='btn btn-info' type="submit" name="gettysburg" formaction="/gettysburg">The Gettysburg Address</button>
+
+        <button class='btn btn-info' type="submit" name="stairway" formaction="/stairway">Stairway to Heaven by Led Zepplin</button>
+
+        <button class='btn btn-info' type="submit" name="home" formaction="/">Custom Search</button>
+    </div>
+</form>
+{% endblock %}
+
+
 {% block display %}
     <h2>Word Count Results</h2>
     <h4>You searched for: {{ counter.getSearchString }}</h4>
